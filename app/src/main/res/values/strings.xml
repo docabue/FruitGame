@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FruitGame</string>
+    <string name="nombre">Escriba su nombre</string>
+    <string name="boton">JUGAR</string>
+    <string name="record"></string>
+
+</resources>

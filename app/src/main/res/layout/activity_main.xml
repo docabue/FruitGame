@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/globos"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/imageView_personaje"
+        android:layout_width="240dp"
+        android:layout_height="205dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="81dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:contentDescription="@string/app_name"
+        app:srcCompat="@drawable/manzana" />
+
+    <EditText
+        android:id="@+id/enombre"
+        android:layout_width="310dp"
+        android:layout_height="61dp"
+        android:layout_below="@+id/imageView_personaje"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="87dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginRight="63dp"
+        android:background="@drawable/fondoet"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/nombre"
+        android:inputType="textPersonName"
+        android:maxLength="15"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:textColor="#7B1FA2"
+        android:textColorHint="#7B1FA2"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/botonJugar"
+        android:layout_width="320dp"
+        android:layout_height="65dp"
+
+        android:layout_below="@+id/enombre"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginRight="60dp"
+        android:background="@drawable/fondoboton"
+        android:onClick="Jugar"
+        android:text="@string/boton"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        tools:text="@string/boton" />
+
+    <TextView
+        android:id="@+id/MejorJugador"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/botonJugar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="-4dp"
+        android:layout_marginRight="-4dp"
+        android:background="@drawable/fondoet"
+        android:contentDescription="@string/app_name"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        tools:text="@string/record" />
+
+</RelativeLayout>
