@@ -3,6 +3,8 @@ package com.example.fruitgame;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -59,6 +61,24 @@ public class MainActivity extends AppCompatActivity {
             id=getResources().getIdentifier("uva", "drawable", getPackageName());
             iv_personaje.setImageResource(id);
         }
+        ////////////////////////////////////////////////////////////////XREAMOS RELACION CON BBDD/////////////////////////////////////////////////////////////////
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this,"BD",null,1);
+        SQLiteDatabase BD = admin.getWritableDatabase();//creamos la apertura modo lectura y escritura de la bbdd
+
+        //creamos la consulta a la base de datos////
+        Cursor consulta = BD.rawQuery(
+                "select* from puntaje where score=(select max(score) from puntaje)", null
+        );
+          if(consulta.moveToFirst() ){ //esto lo que dice es que si hay datos se mete en el if
+            String tem_nombre=consulta.getString(0);//coloco el 0 pq es la columna 0
+            String temp_score=consulta.getString(1);//cojo los datos de la columan 1 q es score
+              tv_record.setText("El record "+ temp_score + " es de " + tem_nombre);
+              BD.close();
+          }else{
+              BD.close();
+          }
+
+
         ////////////////////////////////////////////////////////////////APERTURA DE AUDIO//////////////////////////////////////////////////////////////////
         mp =MediaPlayer.create(this, R.raw.alphabet_song);  //aqui indicamos el contexto la ruta de la song
         mp.start();  //empieza la cancion
@@ -98,13 +118,13 @@ public class MainActivity extends AppCompatActivity {
             /////////////////////////////////////////////////////////////////////////////////////////////// ///////////////////////////////////////////////////////////////////////////////////////////////
         }
 
-//aaaaaaaaaa
+
     }
     ///////////////////////////////////////////////////////////////////////////CREAMOS EL METODO PARA VOLVER A LA ACTIVITY ANTERIOR DANDOLE AL BOTON DEL BACK////////////////////////////////////////////////////////////////////////////////////////
         @Override
     public void onBackPressed()
         {
-
+         finish();  //cierro la activity
         }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

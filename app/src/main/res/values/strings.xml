@@ -1,7 +1,15 @@
 <resources>
     <string name="app_name">FruitGame</string>
-    <string name="nombre">Escriba su nombre</string>
+    <string name="nombre">¿Cómo te llamas?</string>
     <string name="boton">JUGAR</string>
     <string name="record"></string>
+    <string name="finalado">Has ganado</string>
+    <string name="et_vidas">Manzanas:</string>
+    <string name="jugador_nombre">Jugador:</string>
+    <string name="total_score">Score: 0 </string>
+    <string name="boton_sumar">Comprobar</string>
+    <string name="volver">Volver al menu  principal</string>
+    <string name="et_respuesta">Respuesta</string>
+
 
 </resources>
